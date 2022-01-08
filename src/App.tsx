@@ -1,26 +1,31 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import react, { useState } from 'react';
+import style from './App.module.css';
 
-function App() {
+const App: React.FC = () => {
+  const [greeting, setGreeting] = useState<string>();
+  const [showcard, setShowCard] = useState<boolean>(false);
+  const makeCardVisible = (): void => {
+    setShowCard(true);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={style.App}>
+      <header className={style.Appheader}>
+        <label htmlFor='welcomeText'>input your complement</label>
+        <input
+          type='text'
+          className={style.welcomeText}
+          placeholder={greeting}
+          onChange={(e) => setGreeting(e.target.value)}
+        />
+        <button className={style.printBtn} onClick={makeCardVisible}>
+          print
+        </button>
+        {showcard ? <div className={style.labelPrintedOn}></div> : null}
       </header>
     </div>
   );
-}
+};
 
 export default App;

@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.printBtn {
+  height: 30px;
+  background-color: white;
+}
+
+.labelPrintedOn {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,7 +26,7 @@
   }
 }
 
-.App-header {
+.Appheader {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
