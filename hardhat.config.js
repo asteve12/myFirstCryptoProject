@@ -18,11 +18,14 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: '0.8.4',
+  paths: {
+    artifacts: './src/artifacts',
+  },
   networks: {
     ganache: {
       url: 'HTTP://127.0.0.1:7545',
       accounts: [
-        '0x4db0720f95bbc1e54b789104e1fb13fa07ca11d9d8ba7744019077af5f50657e',
+        '0xaee30cb105c75fb4c9f1eba4683f70477668a2ffbb9e1ffae1868faf1e9093a1',
       ],
     },
   },
